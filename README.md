@@ -96,3 +96,16 @@ MyGPIO::MyGPIO(QObject *parent) : QObject(parent)
 
 }
 ```
+
+# How it work inside
+in this library we are using call back function to update value of prorety each time state of gpio changed using
+wiringPiISR function
+i used macro to reduce writing code
+i used singelton design pattern dude to issue that i had with wiringPiISR function when passing a static function 
+the static function can't call other methods without a pointer to the class, with singelton you can get pointer of the class at any giving time and the class it will be singel in the whole programme so no issue of double declaration
+example : MyGPIO::getInstance() ; // to get pointer of class MyGPIO
+i used c++ meta class to call somefunction in run time like __init<name of the pin> to initialize the pin
+    
+
+
+

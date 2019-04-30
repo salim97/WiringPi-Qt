@@ -13,6 +13,8 @@ public:
     CONVERT_CLASS_INTO_SINGELTON(MyGPIO)
 
     INPUT_GPIO_PROPERTY(button1,     7,  INT_EDGE_BOTH, PUD_DOWN)
+    
+    OUTPUT_GPIO_PROPERTY(led_green, 23)
 
 };
 
